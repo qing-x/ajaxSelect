@@ -6,6 +6,7 @@
  *   ajaxUrl:''          //异步请求地址 (必传参数)
  *   param:''            //搜索必传参数名 (必传参数)
  *   expandParam:{}      //搜索非必传参数名(搜索条件传参)
+ *   defaultValue：'' 	//默认值
  *   pageIndex:1         //初始分页页码
  *   size:30             //初始分页条数
  *   defkv:[]            //返回数据 的key (必传参数)
@@ -71,6 +72,7 @@
                 ajaxUrl:'',
                 param:'',
                 expandParam:{},
+		defaultValue:'',
                 pageIndex:1,
                 size:30,
                 defkv:[],
@@ -93,6 +95,7 @@
                 let ajaxTimer;
                 let $sel = $(v), $div = $('<div class="m-input-select"></div>');
                 let $input = $("<input type='text' class='layui-input input-click'/>");
+		    $input.val(extendCfg.defaultValue);
                 // let $wrapper = $("<div class='m-list-wrapper'><ul class='m-list'></ul></div>");
                 let $wrapper = $("<ul class='m-list'></ul>");
                 $div = $sel.wrap($div).addClass("m-select-hide").parent();
